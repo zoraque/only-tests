@@ -1,4 +1,4 @@
-# onyl-tests
+# only-tests
 
 Just only tests using python 3.9.2.
 
