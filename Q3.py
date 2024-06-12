@@ -10,8 +10,8 @@ def execute_query():
             host='127.0.0.1',
             port='3306',
             database='test',
-            user='test',
-            password='secret'
+            user='root',
+            password='my-secret'
         )
 
         if connection.is_connected():
@@ -22,7 +22,7 @@ def execute_query():
                 CONCAT(customers.first_name, ' ', customers.last_name) AS customer, 
                 COUNT(events.status) AS failures
             FROM 
-                customers
+                customersaa
             INNER JOIN 
                 campaigns
             ON 
@@ -48,7 +48,7 @@ def execute_query():
                 print(f"{row[0]} | {row[1]}")
                 
     except Error as e:
-        print(f"Error: {e}")
+        print(f"Mysql-error: {e.msg}")
         
     finally:
         if connection.is_connected():
